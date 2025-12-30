@@ -1,10 +1,9 @@
-{{
-  config(
-    materialized = 'incremental',
-    unique_key = 'OrderId',
-    incremental_predicates=['DBT_INTERNAL_DEST.UpdatedAt > dateadd(day, -7, current_date())']
-  )
-}}
+{{ config(
+    materialized='incremental',
+    incremental_strategy='delete+insert',
+    unique_key='OrderId'
+) }}
+
 
 with get_orders_revenue as(
   select
