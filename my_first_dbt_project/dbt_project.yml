@@ -25,6 +25,9 @@ on-run-end: ["{{ insert_log_records('dbt_logs') }}"]
 
 models:
   my_first_dbt_project:
+    miscellaneous_chapter_resources:
+      +enabled: false
+
     staging:
       +schema: staging
       crm:
@@ -40,6 +43,7 @@ models:
         +schema: finance
       operations:
         +schema: operations
+
 
 seeds:
 
