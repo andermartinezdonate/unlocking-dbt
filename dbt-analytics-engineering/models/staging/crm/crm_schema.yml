@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_crm_customers
+    description: "Staged CRM customers with cleaned and standardized fields."
+    columns:
+      - name: CustomerId
+        tests:
+          - not_null
+          - unique
+
+      - name: EmailAddress
+        tests:
+          - not_null
+
+      - name: PhoneNumber
+        description: "Formatted phone number derived from raw Phone."

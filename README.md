@@ -136,8 +136,7 @@ transferable to platforms such as BigQuery, Snowflake, or Redshift.
 ```bash
 dbt deps
 dbt seed
-dbt run
-dbt test
+dbt build
 ```
 
 ---
